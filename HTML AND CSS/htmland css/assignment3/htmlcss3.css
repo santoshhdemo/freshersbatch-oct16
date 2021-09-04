@@ -1,0 +1,13 @@
+h1{
+    text-align: center
+}
+nav{
+    margin: 20px;
+    background-color: darkgrey;
+    text-align: center;
+}
+body{
+    background-color: #e9e0b2;
+    margin: 20px;
+    padding: 40px;
+}

@@ -1,0 +1,9 @@
+body {
+    margin: 100px;
+    padding: 30px;
+border: 1px solid;
+  background-color: lightgrey;
+}
+.block1{
+    text-align: center;
+}
