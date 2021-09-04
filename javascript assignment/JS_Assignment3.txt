@@ -1,0 +1,98 @@
+HTML CODE:
+<!DOCTYPE html>
+<html>
+    <body>
+        <script src="Assignment1.js"></script>
+    </body>
+</html>
+
+JS CODE:
+1.
+class Rectangle {
+    constructor(height, width) {
+        this.height = height;
+        this.width = width;
+    }
+    get getHeight(){
+        return this.height;
+    }
+    get getWidth(){
+        return this.width;
+    }
+}
+var RectObject = new Rectangle(4, 5);
+document.write("Rectangle<br>Height: "+RectObject.getHeight);
+document.write("<br>Width: "+RectObject.getWidth);
+
+RectObject = new Rectangle(7, 9);
+
+document.write("<br><hr>Update Rectangle properties are:<br>Height: "+RectObject.getHeight);
+document.write("<br>Width: "+RectObject.getWidth);
+
+2,3.
+class Rectangle {
+    constructor(length, width) {
+        this.length = length;
+        this.width = width;
+    }
+    get getLength(){
+        return this.length;
+    }
+    get getWidth(){
+        return this.width;
+    }
+    
+}
+var RectObject = new Rectangle(4, 5);
+document.write("Rectangle<br>Height: "+RectObject.getLength);
+document.write("<br>Width: "+RectObject.getWidth);
+
+Rectangle.prototype.getArea = function() {
+        return this.length * this.breadth
+    }
+Rectangle.prototype.height = 50;
+            document.getElementById("demo").innerHTML =
+            "Rectangle Area: " + RectObject.getArea(); 
+            
+4.
+let Name = {
+    first: "Kothapati",
+    last: "Loshitha"
+};
+document.write("Name<br>first: "+Name.first);
+document.write("<br>last: "+Name.last);
+
+Name.first = "Surapuram";
+Name.last = "Keerthana";
+
+document.write("<br><hr>Updated Name properties are:<br>first: "+Name.first);
+document.write("<br>last: "+Name.last);
+
+/*document.write("<br><hr>Update Rectangle properties are (using for loop): ");
+for (let prop in Name) {
+    document.write("<br>",prop," : ",Name[prop]);}*/
+
+5.
+let Name = {
+    First: "Surapuram",
+    Last: "Keerthana"
+};
+document.write("Name<br>first: "+Name.First);
+document.write("<br>last: "+Name.Last);
+
+Name.Middle = "Sree";
+document.write("<hr>Updated<br>Middle: "+Name.Middle);
+
+6.
+var str = '({"firstName":"Surapuram","lastName":"Keerthana"})';
+var obj = eval(str);
+document.write("firstName:"+obj.firstName + " <br>" +"lastName:"+ obj.lastName); 
+
+7.
+const txt = '{"name":"John", "age":30, "city":"New York", "birth":"1986-12-14"}'
+const obj = JSON.parse(txt);
+obj.birth = new Date(obj.birth);
+document.write("name:"+ obj.name +"<br>age:"+ obj.age+"<br>Date of birth:"+ obj.birth.getDate()+"-"+ obj.birth.getMonth()+"-"+ obj.birth.getFullYear());
+
+1.
+
