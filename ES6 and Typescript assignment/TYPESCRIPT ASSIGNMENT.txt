@@ -1,0 +1,68 @@
+1.PROMISES
+
+class Account{
+    constructor(id,name,balance){
+        this.id=id;
+        this.name=name;
+        this.balance=balance;
+    }
+    totalBalance(){
+             return this.balance;
+    
+        }
+}
+    class SavingAccount extends Account{
+        constructor(id,name,balance,intrest){
+            super(id,name,balance= balance+(balance*intrest)/100);
+        }
+    }
+    class CurrentAccount extends Account{
+        constructor(id,name,balance,cashCredits){
+            super(id,name,balance=balance+cashCredits);
+        }
+    }
+    let s1=new SavingAccount(1,"Jhon",20000,10);
+    let c1=new CurrentAccount(2,"Jhon",21000,5000);
+    let s2=new SavingAccount(1,"Alex",30000,11);
+    let c2=new CurrentAccount(2,"Alex",25000,10000);
+    console.log(s1.totalBalance());
+    console.log(c1.totalBalance());
+    console.log(s2.totalBalance());
+    console.log(c2.totalBalance());
+2. TYPESCRIPT CLASSES AND TYPES
+
+const promise1=new Promise((resolve, reject) => {
+        resolve(10);
+    });
+    const promise2=new Promise((resolve,reject) =>{
+       resolve(20);
+    });
+    Promise.all([promise1,promise2])
+    .then(results =>{
+       const total=results.reduce((p1,p2) => p1+p2);
+       console.log( `Results: ${results}`);
+       console.log(`Total: ${total}`);
+    });
+
+3. TYPESCRIPT INTERFACES
+
+interface Printable{
+     print():any;
+}
+let circle: Printable ={
+    print(){
+       console.log("circle object");
+    }
+}
+let employee: Printable ={
+    print(){
+        console.log("employee object");
+    }
+}
+
+let printAll=function(...objArr: Array<any>){
+    for(let i in objArr){
+        console.log(objArr[i].print())
+    }
+}
+

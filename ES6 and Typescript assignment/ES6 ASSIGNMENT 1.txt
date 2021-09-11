@@ -1,0 +1,117 @@
+
+
+
+1. CONSTANTS
+console.log("hello");
+const x=99;
+x=23;//	"message": "Cannot assign to 'x' because it is a constant."
+
+2. SCOPING
+let times=4;
+if(times>3){
+    let greet="Hello!!";
+}
+console.log(greet); //"message": "Cannot find name 'greet'.",
+                   //error as let: scope=block
+
+3. ENHANCED OBJECT PROPERITES
+let Order={
+    id:1001,
+    title:"Product",
+    price:100,
+    printOrder(){
+        return this.id +" "+ this.title;
+    },
+    getPrice(){
+        return this.price;
+    }
+
+};
+//let Obj = Object.assign({}, Order);
+//console.log(Obj);
+
+4. ARROW FUNCTIONS
+class Object1{
+        name1;
+        length1;
+        constructor(name1:string){
+            this.name1 = name1;
+            this.length1 = name1.length;
+        }
+    }
+    let displayArray = (...objects: Array<object>) =>{
+        console.log("objects array: ",objects);
+        for(let i in objects)
+        console.log(objects[i]);
+    }
+
+    let names = ['tom', 'ivan', 'Jerry'];
+    let [n1, n2, n3] = names;
+    const obj1 = new Object1(n1);
+    const obj2 = new Object1(n2);
+    const obj3 = new Object1(n3);
+    displayArray(obj1,obj2,obj3);
+
+5.a)
+var add = () => 10;
+5.b)
+let userFriends=function(username:string, ...friends:Array<string>){
+    console.log("username: ",username);
+    console.log("friends: ",friends);
+}
+userFriends('Jhon','Alex','Robert','Karn','Hulk'); 
+5.c)
+let capitalNames=function(...names: Array<string>){
+    for(let i in names)
+        console.log(names[i].toUpperCase());
+}
+capitalNames('Jhon','Alex','Robert','Karn','Hulk'); 
+
+6. TEMPLATE LITERALS
+var laptop = "HP", model = "Pavillion", deskno = 123, client='Lewis Hamilton';
+var ticket = `hi Sysnet, this is ${client} - deskNo.: ${deskno}, and my laptop: ${laptop}, 
+model: ${model}, isn't working. Reques replacement.`;
+console.log(ticket);
+
+7.a) PRINT 3RD ELEMENT OF ARRAY
+let array = [1,2,3,4];
+let [e1, e2, e3, e4] = array;
+//let [, , ele3,] = array;
+console.log("3rd element: ",e3);
+//console.log(ele3);
+
+7.b)
+let organization = {
+     Name:"Jhon",
+     address:{country: "Newyork", pincode: 77017}
+}
+let{Name:n,address:a}=organization;
+console.log(a.pincode);
+
+8. CLASSES AND MODULES
+class Account{
+    constructor(id,name,balance){
+        this.id=id;
+        this.name=name;
+        this.balance=balance;
+    }
+    totalBalance(){
+             return this.balance;
+    
+        }
+}
+    class SavingAccount extends Account{
+        constructor(id,name,balance,intrest){
+            super(id,name,balance= balance+(balance*intrest)/100);
+        }
+    }
+    class CurrentAccount extends Account{
+        constructor(id,name,balance,cashCredits){
+            super(id,name,balance=balance+cashCredits);
+        }
+    }
+    let s1=new SavingAccount(1,"Jhon",20000,10);
+    let c1=new CurrentAccount(2,"Jhon",21000,5000);
+    console.log(s1.totalBalance());
+    console.log(c1.totalBalance());
+

@@ -1,0 +1,52 @@
+1. SYMBOLS
+let Fibonaci = {
+    previousNo: 0,
+    currentNo: 1,
+    next(){
+    let temp =this.previousNo + this.currentNo;
+    this.currentNo= temp;
+    this.previousNo= this.currentNo;
+    return temp;
+    }
+}
+var n=window.prompt();
+for (let i=0;i<n;i++){
+    console.log(Fibonaci.next());
+}
+
+
+2. ITERATORS
+let iterable = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 153, 370];
+function getNextArmstrong(x:Array<number>) {
+    let count=0;
+    return {
+        next:function(){
+            return count< x.length ? {value:x[count++],done:false}:
+            {value:undefined,done:true};
+        }
+    }
+}
+let myIterator = getNextArmstrong(iterable);
+console.log(myIterator.next());
+console.log(myIterator.next());
+console.log(myIterator.next());
+console.log(myIterator.next());
+console.log(myIterator.next());
+
+3. GENERATORS
+let iterable = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 153, 370, 371, 407, 1634, 8208, 9474];
+function getNextArmstrong(x:Array<number>) {
+    let count=0;
+    return {
+        next:function(){
+            return count< x.length ? {value:x[count++],done:false}:
+            {value:undefined,done:true};
+        }
+    }
+}
+let myIterator = getNextArmstrong(iterable);
+for(var i=0;i<iterable.length;i++){
+    if(iterable[i]<1000)
+    console.log(myIterator.next());
+}
+console.log("Amstrongnumber Exceeded");
